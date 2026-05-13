@@ -17,12 +17,12 @@
 
     <!-- ════ LOADER ════ -->
     <div id="loader">
-        <img src="/Styles/Photos/Logo.jpeg" class="ld-logo" id="ld-logo-img"
-            onerror="this.style.display='none'; document.getElementById('ld-icon').style.display='flex'">
-        
-        <div id="ld-icon"
-            style="display:none;align-items:center;justify-content:center;width:140px;height:140px;background:linear-gradient(135deg,#8F7234,#C19E50);border-radius:16px;border: 2px solid var(--border-h);">
-            <i class="fa-solid fa-building-columns" style="font-size:3.5rem;color:#0F1216;"></i>
+        <div style="position: relative; width: 140px; height: 140px; margin: 0 auto;">
+
+            <img src="/Styles/Photos/Logo.jpeg" class="ld-logo" id="ld-logo-img" alt="Logo"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                object-fit: contain; background: transparent; z-index: 2; border-radius: 16px;"
+                onload="this.style.zIndex='2'" onerror="this.style.display='none'">
         </div>
         <div class="ld-bar">
             <div class="ld-fill"></div>
