@@ -74,10 +74,12 @@
         // ══════════════════════════════════════
         window.addEventListener('load', () => {
             setTimeout(() => {
-                document.getElementById('loader').classList.add('out');
+                const ld = document.getElementById('loader');
+                if (ld) ld.classList.add('out');
+                document.body.classList.remove('loading');
                 // Start counter animation after load
                 startCounters();
-            }, 2400);
+            }, 2000);
         });
 
         // ══════════════════════════════════════
