@@ -72,15 +72,24 @@
         // ══════════════════════════════════════
         // LOADER
         // ══════════════════════════════════════
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const ld = document.getElementById('loader');
-                if (ld) ld.classList.add('out');
-                document.body.classList.remove('loading');
-                // Start counter animation after load
-                startCounters();
-            }, 2000);
-        });
+      function hideLoader() {
+        const ld = document.getElementById('loader');
+        const body = document.body;
+        
+        if (ld) ld.classList.add('out');
+        if (body) body.classList.remove('loading');
+        startCounters();
+    }
+    if (document.readyState === 'complete') {
+        hideLoader();
+    } 
+    else {
+        window.addEventListener('load', hideLoader);
+    }
+
+    setTimeout(() => {
+        hideLoader();
+    }, 3000);
 
         // ══════════════════════════════════════
         // NAVBAR SCROLL
